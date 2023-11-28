@@ -1,6 +1,13 @@
 // https://api.weatherapi.com/v1/current.json?key=edf65ac3b32a48938e0221942232011&q=london
 
 let weatherInfo = {};
+const input = document.querySelector('input');
+const button = document.querySelector('button');
+
+button.addEventListener('click', (e) => {
+    let location = input.value;
+    getWeatherData(location);
+})
 
 const getWeatherData = async function(location) {
     let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=edf65ac3b32a48938e0221942232011&q=${location}&days=3`, {mode: 'cors'});
@@ -29,5 +36,3 @@ let weatherJSON = function(response) {
 
     console.log(weatherInfo);
 }
-
-getWeatherData("london");
