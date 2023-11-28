@@ -1,5 +1,3 @@
-// https://api.weatherapi.com/v1/current.json?key=edf65ac3b32a48938e0221942232011&q=london
-
 let weatherInfo = {};
 const input = document.querySelector('input');
 const form = document.querySelector('form');
@@ -37,3 +35,5 @@ let weatherJSON = function(response) {
 
     console.log(weatherInfo);
 }
+
+export {weatherInfo};
