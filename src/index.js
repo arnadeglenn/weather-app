@@ -2,9 +2,10 @@
 
 let weatherInfo = {};
 const input = document.querySelector('input');
-const button = document.querySelector('button');
+const form = document.querySelector('form');
 
-button.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     let location = input.value;
     getWeatherData(location);
 })
