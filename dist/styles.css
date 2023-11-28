@@ -21,7 +21,7 @@ body {
     background-size: cover;
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: 100vh;
 
 }
@@ -36,6 +36,19 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    row-gap: 10px;
+}
+
+.forecast-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
 }
 
 .temp-box {
@@ -79,7 +92,23 @@ svg {
     fill: var(--mid-light-purple);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 465px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        padding: 5px;
+    }
+
+    .temp-box {
+        display: flex;
+        align-items: center;
+        border-right: 3px solid var(--mid-light-purple);
+        gap: 4px;
+        padding: 10px;
+        font-size: 3rem;
+    }
+
     .weather-info:nth-child(1) {
         order: 2;
     }
