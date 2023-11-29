@@ -1,119 +1,117 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;500&display=swap");
 
 :root {
-    --dark-purple: #190132;
-    --mid-dark-purple: #7c3aed;
-    --mid-light-purple: #a78bfa;
-    --light-purple: #ede9fe;
-    --text-color: #c026d3;
+  --dark-purple: #190132;
+  --mid-dark-purple: #7c3aed;
+  --mid-light-purple: #a78bfa;
+  --light-purple: #ede9fe;
+  --text-color: #c026d3;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Lexend', sans-serif;
-    color: var(--light-purple);
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Lexend", sans-serif;
+  color: var(--light-purple);
 }
 
 body {
-    background: url(./assets/background.jpg) no-repeat center center fixed;
-    background-size: cover;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: 100vh;
-
+  background: url(./assets/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 100vh;
 }
 
 .weather-info {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .current-weather {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .forecast {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    row-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  row-gap: 10px;
 }
 
 .forecast-days {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
 }
 
 .temp-box {
-    display: flex;
-    align-items: center;
-    border-right: 3px solid var(--mid-light-purple);
-    gap: 8px;
-    padding: 10px;
-    font-size: 4rem;
+  display: flex;
+  align-items: center;
+  border-right: 3px solid var(--mid-light-purple);
+  gap: 8px;
+  padding: 10px;
+  font-size: 4rem;
 }
 
 .search {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
 
 input {
-    background-color: rgb(0, 0, 0, 0);
-    padding: 5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    box-shadow: none;
-    border-bottom: 2px solid var(--mid-light-purple);
+  background-color: rgb(0, 0, 0, 0);
+  padding: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+  border-bottom: 2px solid var(--mid-light-purple);
 }
 
 input:focus {
-    outline: none;
-    border-bottom: 2px solid var(--mid-light-purple);
+  outline: none;
+  border-bottom: 2px solid var(--mid-light-purple);
 }
 
 input::placeholder {
-    color: var(--mid-dark-purple);
-    opacity: .3;
+  color: var(--mid-dark-purple);
+  opacity: 0.3;
 }
 
-
 svg {
-    height: 4rem;
-    width: auto;
-    fill: var(--mid-light-purple);
+  height: 4rem;
+  width: auto;
+  fill: var(--mid-light-purple);
 }
 
 @media screen and (max-width: 465px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        padding: 5px;
-    }
+  body {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 5px;
+  }
 
-    .temp-box {
-        display: flex;
-        align-items: center;
-        border-right: 3px solid var(--mid-light-purple);
-        gap: 4px;
-        padding: 10px;
-        font-size: 3rem;
-    }
+  .temp-box {
+    display: flex;
+    align-items: center;
+    border-right: 3px solid var(--mid-light-purple);
+    gap: 4px;
+    padding: 10px;
+    font-size: 3rem;
+  }
 
-    .weather-info:nth-child(1) {
-        order: 2;
-    }
+  .weather-info:nth-child(1) {
+    order: 2;
+  }
 
-    .search:nth-child(2) {
-        order: 1;
-    }
+  .search:nth-child(2) {
+    order: 1;
+  }
 }
