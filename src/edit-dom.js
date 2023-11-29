@@ -3,28 +3,84 @@ import { weatherInfo } from ".";
 
 const renderDOM = function() {
     const mainTempSVG = document.querySelector('.main-temp-svg');
+    mainTempSVG.innerHTML = '';
+    rainSunSVG(weatherInfo.currentPrecip, mainTempSVG);
+
     const mainTemp = document.querySelector('h3');
-    const location = document.querySelector('.location');
+    mainTemp.innerHTML = '';
+    mainTemp.innerHTML = `${weatherInfo.currentFTemp} &deg;`;
+
+    const location = document.querySelector('.location');    
+    location.innerHTML = '';
+    location.innerHTML = weatherInfo.location;
+
     const currentPrecip = document.querySelector('.current-precip');
+    currentPrecip.innerHTML = '';
+    currentPrecip.innerHTML = `${weatherInfo.currentPrecip}% Precipitation`;
+
     const currentHumid = document.querySelector('.current-humid');
+    currentHumid.innerHTML = '';
+    currentHumid.innerHTML = `${weatherInfo.currentHumidity}% Humidity`;
 
     const dayOneSVG = document.querySelector('.day-1-svg');
+    dayOneSVG.innerHTML = '';
+    rainSunSVG(weatherInfo.currentPrecip, dayOneSVG);
+
     const maxTempOne = document.querySelector('.max-1');
-    const minTempOne = document.querySelector('min-1');
-    const precipOne = document.querySelector('precip-1');
-    const dateOne = doucment.querySelector('date-1');
+    maxTempOne.innerHTML = '';
+    maxTempOne.innerHTML = `Max: ${weatherInfo.currentMax}&deg;`;
+
+    const minTempOne = document.querySelector('.min-1');
+    minTempOne.innerHTML = '';
+    minTempOne.innerHTML = `Min: ${weatherInfo.currentMin}&deg;`;
+
+    const precipOne = document.querySelector('.precip-1');
+    precipOne.innerHTML = '';
+    precipOne.innerHTML = `Precip: ${weatherInfo.currentPrecip}%`;
+
+    const dateOne = document.querySelector('.date-1');
+    dateOne.innerHTML = '';
+    dateOne.innerHTML = weatherInfo.currentDate;
 
     const dayTwoSVG = document.querySelector('.day-2-svg');
+    dayTwoSVG.innerHTML = '';
+    rainSunSVG(weatherInfo.secondPrecip, dayTwoSVG);
+
     const maxTempTwo = document.querySelector('.max-2');
-    const minTempTwo = document.querySelector('min-2');
-    const precipTwo = document.querySelector('precip-2');
-    const dateTwo = doucment.querySelector('date-2');
+    maxTempTwo.innerHTML = '';
+    maxTempTwo.innerHTML = `Max: ${weatherInfo.secondMax}&deg;`;
+
+    const minTempTwo = document.querySelector('.min-2');
+    minTempTwo.innerHTML = '';
+    minTempTwo.innerHTML = `Min: ${weatherInfo.secondMin}&deg;`;
+
+    const precipTwo = document.querySelector('.precip-2');
+    precipTwo.innerHTML = '';
+    precipTwo.innerHTML = `Precip: ${weatherInfo.secondPrecip}%`;
+
+    const dateTwo = document.querySelector('.date-2');
+    dateTwo.innerHTML = '';
+    dateTwo.innerHTML = weatherInfo.secondDate;
 
     const dayThreeSVG = document.querySelector('.day-3-svg');
+    dayThreeSVG.innerHTML = '';
+    rainSunSVG(weatherInfo.thirdPrecip, dayThreeSVG);
+
     const maxTempThree = document.querySelector('.max-3');
-    const minTempThree = document.querySelector('min-3');
-    const precipThree = document.querySelector('precip-3');
-    const dateThree = doucment.querySelector('date-3');
+    maxTempThree.innerHTML = '';
+    maxTempThree.innerHTML = `Max: ${weatherInfo.thirdMax}&deg;`;
+
+    const minTempThree = document.querySelector('.min-3');
+    minTempThree.innerHTML = '';
+    minTempThree.innerHTML = `Min: ${weatherInfo.thirdMin}`;
+
+    const precipThree = document.querySelector('.precip-3');
+    precipThree.innerHTML = '';
+    precipThree.innerHTML = `Precip: ${weatherInfo.thirdPrecip}%`;
+
+    const dateThree = document.querySelector('.date-3');
+    dateThree.innerHTML = '';
+    dateThree.innerHTML = weatherInfo.thirdDate;
 }
 
 
@@ -36,7 +92,7 @@ const rainSunSVG = function(precip, node) {
     }
 }
 
-
+export {renderDOM, rainSunSVG};
 
 
 
