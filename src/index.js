@@ -8,19 +8,21 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let location = input.value;
     getWeatherData(location);
-    renderDOM();
+    
 })
 
 const getWeatherData = async function(location) {
-    let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=edf65ac3b32a48938e0221942232011&q=${location}&days=3`, {mode: 'cors'});
-    response.json().then(weather => weatherJSON(weather));
+    try {
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=edf65ac3b32a48938e0221942232011&q=${location}&days=3`, {mode: 'cors'});
+         response.json()
+        .then(weather => weatherJSON(weather))
+        .then(object => renderDOM());
+    } catch (error) {
+        const mainTemp = document.querySelector('h3');
+        mainTemp.innerHTML = '';
+        mainTemp.innerHTML = "Error";
+    }
 }
-
-getWeatherData().catch((error) => {
-    const mainTemp = document.querySelector('h3');
-    mainTemp.innerHTML = '';
-    mainTemp.innerHTML = "Error";
-});
 
 let weatherJSON = function(response) {
     console.log(response);
@@ -45,7 +47,6 @@ let weatherJSON = function(response) {
     console.log(weatherInfo);
 }
 
-getWeatherData("london");
-renderDOM();
+getWeatherData('Los Angeles');
 
 export {weatherInfo};
